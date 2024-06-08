@@ -32,7 +32,7 @@ const divide = (req, res) => {
     res.status(200).json({ result: divide });
 };
 
-export default {
+module.exports = {
     addNumbers,
     subtract,
     multiply,

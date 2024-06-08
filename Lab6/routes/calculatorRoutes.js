@@ -1,9 +1,10 @@
 //Lab 2: setting up calculator routes
 //Lab 3: setting up all 4 functions to work and use HTML to take input from user
-import express from "express";
+const express = require("express");
 const router = express.Router();
 //lab 5: setting routes to use controllers
-import calculator from "../controllers/calculatorController.js";
+// import calculator from "../controllers/calculatorController.js";
+const calculator = require("../controllers/calculatorController.js");
 router.get("/add", (req, res) => {
     calculator.addNumbers(req, res);
 });
@@ -81,4 +82,4 @@ router.get("/multiply", (req, res) => {
 //     res.status(200);
 //     res.json({ result: product });
 // });
-export default router;
+module.exports = router;

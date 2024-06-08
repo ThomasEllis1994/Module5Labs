@@ -1,9 +1,7 @@
 // app.test.js
 // import supertest and the express app
-// const request = require("supertest");
-import request from "supertest";
-// const app = require("./app");
-import app from "./app.js";
+const request = require("supertest");
+const app = require("./app");
 describe("Calculator Routes", () => {
     // generate some random numbers to test the calculator
     let number1 = Math.floor(Math.random() * 1_000_000);

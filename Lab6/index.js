@@ -1,4 +1,5 @@
-import app from "./app.js";
+// import app from "./app.js";
+const app = require("./app.js");
 const port = 3000;
 // import express from "express";
 // app.use(express.json);
