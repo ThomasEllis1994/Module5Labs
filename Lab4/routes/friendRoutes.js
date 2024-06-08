@@ -51,16 +51,19 @@ router.get("/filter", (req, res) => {
 // 2. Get information about this request from the headers
 router.get("/info", (req, res) => {
     console.log(req.headers);
+    let userAgent = req.headers["user-agent"];
+    let contentType = req.headers["content-type"];
+    let headers = req.headers["accept"];
 
     // Modify this response to just return info on the user-agent, content-type and accept headers
-    res.json(req.headers);
+    res.json({ userAgent, contentType, headers });
 });
 
 // 3. Dynamic request param endpoint - get the friend matching the specific ID ie. /friends/3
 router.get("/:id", (req, res) => {
     console.log(req.params);
-    let friendId = parseInt(req.params.id); // 'id' here will be a value matching anything after the / in the request path
-    let findFriend = friends.find((friend) => friend.id === friendId);
+    const friendId = parseInt(req.params.id); // 'id' here will be a value matching anything after the / in the request path
+    const findFriend = friends.find((friend) => friend.id === friendId);
     console.log(friendId);
     console.log(findFriend);
     // Modify this function to find and return the friend matching the given ID, or a 404 if not found
@@ -100,12 +103,14 @@ router.post("/", (req, res) => {
 
 // 4. Complete this new route for a PUT request which will update data for an existing friend
 router.put("/:id", (req, res) => {
-    let friendId = req.params.id;
-    let updatedFriend = req.body;
+    const friendId = req.params.id;
+    const updatedFriend = req.body;
 
     // Replace the old friend data for friendId with the new data from updatedFriend
 
     // Modify this response with the updated friend, or a 404 if not found
+    res.status(200).json;
+
     res.json({
         result: "Updated friend with ID " + friendId,
         data: updatedFriend,

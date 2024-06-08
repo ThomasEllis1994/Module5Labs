@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Calculator Example</title>
@@ -99,8 +100,8 @@
             let operator = getOperator();
             fetch(`/calculator/${operator}?num1=${num1}&num2=${num2}`)
                 .then((response) => response.json())
-                .then((json) => {
-                    document.getElementById("result").innerHTML = json.result;
+                .then((data) => {
+                    document.getElementById("result").innerHTML = data.result;
                 });
         }
     </script>
