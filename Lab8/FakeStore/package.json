@@ -1,13 +1,15 @@
 {
-    "name": "lab8",
+    "name": "fakestore",
     "version": "1.0.0",
-    "description": "Lab 1: Creating Portss",
+    "description": "Fake store backend work showing what we have learned in Module5",
     "main": "index.js",
-    "type": "module",
     "scripts": {
         "start": "nodemon index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Thomas Ellis",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.19.2"
+    }
 }

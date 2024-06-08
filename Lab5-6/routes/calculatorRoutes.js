@@ -3,22 +3,46 @@
 import express from "express";
 const router = express.Router();
 //lab 5: setting routes to use controllers
-import calculatorController from "../controllers/calculatorController.js";
+import calculator from "../controllers/calculatorController.js";
 router.get("/add", (req, res) => {
-    calculatorController.addNumbers(req, res);
+    calculator.addNumbers(req, res);
 });
 
 router.get("/subtract", (req, res) => {
-    calculatorController.subtract(req, res);
+    calculator.subtract(req, res);
 });
 
 router.get("/divide", (req, res) => {
-    calculatorController.divide(req, res);
+    calculator.divide(req, res);
 });
 
 router.get("/multiply", (req, res) => {
-    calculatorController.multiply(req, res);
+    calculator.multiply(req, res);
 });
+
+// I broked something when I tried seperating them out
+
+// import addController from "../controllers/addController.js";
+// import subtractController from "../controllers/subtractController.js";
+// import divideController from "../controllers/divideController.js";
+// import multiplyController from "../controllers/multiplyController.js";
+
+// router.get("/add", (req, res) => {
+//     addController.add(req, res);
+// });
+
+// router.get("/subtract", (req, res) => {
+//     subtractController.subtract(req, res);
+// });
+
+// router.get("/divide", (req, res) => {
+//     divideController.divide(req, res);
+// });
+
+// router.get("/multiply", (req, res) => {
+//     console.log(req.query);
+//     multiplyController.multiply(req, res);
+// });
 
 //These did work, stopped working once I added controllers
 //Lab 2: setting up routes for Calculator

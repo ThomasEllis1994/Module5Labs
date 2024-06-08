@@ -1,13 +1,16 @@
 {
-    "name": "lab8",
+    "name": "lab1",
     "version": "1.0.0",
-    "description": "Lab 1: Creating Portss",
+    "description": "",
     "main": "index.js",
-    "type": "module",
     "scripts": {
         "start": "nodemon index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
+    "type":"module",
     "author": "Thomas Ellis",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.19.2"
+    }
 }

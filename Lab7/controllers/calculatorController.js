@@ -1,12 +1,11 @@
 import Calculator from "../libraries/calculator.js";
 const myCalc = new Calculator();
+console.log(myCalc.log);
 
 const addNumbers = (req, res) => {
     let number1 = parseInt(req.query.num1);
     let number2 = parseInt(req.query.num2);
-    console.log(number1, number2);
     let sum = myCalc.add(number1, number2);
-    console.log(sum);
     res.status(200).json({ result: sum });
 };
 

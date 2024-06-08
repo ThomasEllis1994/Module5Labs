@@ -1,9 +1,15 @@
+import logger from "../libraries/logger.js";
+
 class Calculator {
     constructor() {
         this.id = Math.random();
     }
+    // #log = (value) => {
+    //     console.log(`[Calculator :${this.id}]:${value}`);
+    // };
     #log = (value) => {
-        console.log(`[Calculator :${this.id}]:${value}`);
+        const log = new logger(value);
+        return log;
     };
     add(num1, num2) {
         const value = num1 + num2;

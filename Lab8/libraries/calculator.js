@@ -27,3 +27,4 @@ class Calculator {
         return value;
     }
 }
+export default Calculator;

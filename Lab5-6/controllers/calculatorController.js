@@ -1,5 +1,3 @@
-import express from "express";
-//This was not working. It said in console that it could not read num1
 const addNumbers = (req, res) => {
     let number1 = parseInt(req.query.num1);
     let number2 = parseInt(req.query.num2);

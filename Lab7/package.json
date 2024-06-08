@@ -1,8 +1,8 @@
 {
-    "name": "lab1",
+    "name": "lab7",
     "version": "1.0.0",
     "description": "Lab 1: Creating Portss",
-    "main": "Lab1.js",
+    "main": "index.js",
     "type": "module",
     "scripts": {
         "start": "nodemon index.js",

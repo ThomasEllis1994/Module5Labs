@@ -1,9 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>My First Page</title>
+        <title>Calculator Example</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
     </head>
     <body>
-        <h1>Hello Class!</h1>
+        <section id="inputs">
+            <section>
+                <h2>Choose your numbers</h2>
+                <div class="inputNums">
+                    <label for="num1">Enter the first number.</label><br />
+                    <input type="number" value="" name="num1" id="num1" />
+                    <br />
+                    <label for="num2">Enter the second number.</label><br />
+                    <input type="number" value="" name="num2" id="num2" />
+                </div>
+            </section>
+            <br />
+            <section id="operatorsChoice">
+                <input
+                    type="radio"
+                    class="btn-check"
+                    name="options"
+                    id="option1"
+                    autocomplete="off"
+                    value="add"
+                    checked
+                />
+                <label class="btn btn-secondary" for="option1">Addition</label>
+
+                <input
+                    type="radio"
+                    class="btn-check"
+                    name="options"
+                    id="option2"
+                    autocomplete="off"
+                    value="subtract"
+                />
+                <label class="btn btn-secondary" for="option2"
+                    >Subtraction</label
+                >
+
+                <input
+                    type="radio"
+                    class="btn-check"
+                    name="options"
+                    id="option3"
+                    autocomplete="off"
+                    value="multiply"
+                />
+                <label class="btn btn-secondary" for="option3"
+                    >Multiplication</label
+                >
+
+                <input
+                    type="radio"
+                    class="btn-check"
+                    name="options"
+                    id="option4"
+                    autocomplete="off"
+                    value="divide"
+                />
+                <label class="btn btn-secondary" for="option4">Division</label>
+            </section>
+        </section>
+        <button onclick="calculator()">Calculate</button>
+        <div>
+            Result:
+            <span id="result"></span>
+        </div>
     </body>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+    ></script>
+
+    <script>
+        //import router from "../routes/calculatorRoutes.js";
+        function calculator() {
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+
+            function getOperator() {
+                const operators = document.getElementsByName("options");
+                let operation = "";
+                for (i = 0; i < operators.length; i++)
+                    if (operators[i].checked) {
+                        operation = operators[i].value;
+                    }
+                console.log(operation);
+                return operation;
+            }
+            let operator = getOperator();
+            fetch(`/calculator/${operator}?num1=${num1}&num2=${num2}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    document.getElementById("result").innerHTML = data.result;
+                });
+        }
+    </script>
 </html>
