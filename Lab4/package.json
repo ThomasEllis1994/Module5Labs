@@ -1,0 +1,16 @@
+{
+    "name": "m5lab_expressapp",
+    "version": "1.0.0",
+    "description": "Lab 4 for Module 5 of IOD",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "nodemon index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Thomas Ellis",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.18.2"
+    }
+}
